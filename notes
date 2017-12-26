@@ -1,0 +1,8 @@
+import json
+import coinmarketcap
+#import reddit?
+
+
+market = Market()
+out = market.ticket("ethereum")
+
