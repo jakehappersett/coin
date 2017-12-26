@@ -1,0 +1,11 @@
+{
+	"Ethereum":{
+		"ammount":".5"
+	},
+	"Bitcoin":{
+		"ammount":".5"
+	},
+	"ripple":{
+		"ammount":"50"
+	}
+}

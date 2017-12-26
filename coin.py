@@ -1,13 +1,22 @@
 import coinmarketcap
 import beautifultable 
-#import json
+import json
 #import pprint
 #import reddit
 
+with open('coinconfig.json', 'r') as fp:
+    obj = json.load(fp)
+
+
 market = coinmarketcap.Market()
-names = ["ethereum", "bitcoin", "ripple"]
-ammount = [.5, .5, 50]
+names = list(obj.keys())
+ammount = []
 value = []
+
+#calculate ammounts
+for name in names:
+    a = float(obj[name]['ammount'])
+    ammount.append(a)
 
 
 #calculate values 
@@ -17,12 +26,6 @@ for name in names:
     value.append(t)
 
 total = sum(value)
-#format and print data 
-#print("coin --- price --- owned --- value")
-#for name in names:
-#    out = market.ticker(name)
-#    print( "\n", out[0]['symbol'],  " --- " , out[0]['price_usd'], " --- ", total[names.index(name)], " --- ", value[names.index(name)])
-
 
 #create and format table
 table = beautifultable.BeautifulTable()

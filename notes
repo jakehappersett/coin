@@ -6,3 +6,4 @@ import coinmarketcap
 market = Market()
 out = market.ticket("ethereum")
 
+add in functionality to add coins and values 
